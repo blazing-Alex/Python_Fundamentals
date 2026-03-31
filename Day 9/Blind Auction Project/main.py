@@ -6,6 +6,7 @@
 
 from art import logo
 import os
+import subprocess
 
 print(logo)
 
@@ -32,7 +33,8 @@ while continue_bidding:
         continue_bidding = False
         find_highest_bid(bid_list)
     elif should_continue == "y":
-        os.system("cls")
+        if os.name == "nt":
+            subprocess.run(['cls'], shell=True)
 
 
 
